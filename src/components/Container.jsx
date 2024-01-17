@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 
-import FormTodo from "./FormTodo";
 import TaskList from "./TaskList";
+import FormTodo from "./FormTodo";
 
 const Container = () => {
+  const [list, setList] = useState([]); // (B-1)
+
+  // (A-2)
+  const handleAddItem = addItem => {
+    setList([...list, addItem]); // (B-2)
+  };
   return (
     <div>
-      Container!
-      <FormTodo />
-      <TaskList />
+      {/*(A-1)*/}
+      <FormTodo handleAddItem={handleAddItem} />
+      {/*(C)*/}
+      <TaskList list={list} setList={setList} />
     </div>
   );
 };
