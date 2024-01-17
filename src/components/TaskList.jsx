@@ -1,10 +1,12 @@
-const TaskList = ({ tasks }) => {
+import React from "react";
+import Checkbox from "./Checkbox";
+
+const TaskList = () => {
   return (
-    <ul>
-      {tasks.map((task, index) => (
-        <li key={index}>{task}</li>
-      ))}
-    </ul>
+    <div>
+      TaskList!
+      <Checkbox />
+    </div>
   );
 };
 
