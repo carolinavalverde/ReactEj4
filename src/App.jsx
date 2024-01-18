@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles/App.css";
+import "./styles/App.scss";
 import Container from "./components/Container";
 
 function App() {
