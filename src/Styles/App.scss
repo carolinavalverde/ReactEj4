@@ -25,10 +25,10 @@ html {
   
   
   /** BUTTONS*/
-  $colorPink: #e95678;
+  $colorPink: #dc9bde;
   $colorPinkHover:#c23455;
   
-  $colorBlue: #25b0bc;
+  $colorBlue: #9adddd;
   $colorBlueHover:#166b72;
   
   @mixin button($class, $color, $colorHover) {
@@ -75,7 +75,7 @@ html {
   /* Original styles by Shaw : https://codepen.io/shshaw/pen/WXMdwE */
   $duration: 0.4s;
   $stroke: #42d7e4;
-  $colorText: #076b74;
+  $colorText: #234144;
   $colorTextChecked: #a5e7ec;
   
   .todo {
