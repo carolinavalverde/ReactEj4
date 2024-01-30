@@ -30,7 +30,7 @@ const TaskList = (props) => {
       {list.length ? (
         <p>
           <button className="button blue" onClick={onClickRemoveItem}>
-            Delete all done
+            Borrar todas lastareas hechas
           </button>
         </p>
       ) : null}

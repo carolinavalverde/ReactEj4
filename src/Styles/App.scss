@@ -1,5 +1,5 @@
 html {
-    background: #ddd;  
+    background: #eebe83;  
     height: 100%;
     display: flex;
   }
@@ -14,7 +14,7 @@ html {
   }
   
   .todo-list {
-    background: #fff;
+    background: #e2cfdd;
     font-size: 15px;
     max-width: 300px;
     margin: auto;
@@ -25,8 +25,8 @@ html {
   
   
   /** BUTTONS*/
-  $colorPink: #dc9bde;
-  $colorPinkHover:#c23455;
+  $colorPink: #c23455;
+  $colorPinkHover:#9e4ba0;
   
   $colorBlue: #9adddd;
   $colorBlueHover:#166b72;
@@ -57,7 +57,7 @@ html {
   /** TODO*/
   .file-input{
     padding: 2px;
-    background: #f8f8f8;
+    background: #f3caf3;
   }
   
   .file-input > .text {
@@ -72,7 +72,6 @@ html {
   
   
   /** CHECKBOX*/
-  /* Original styles by Shaw : https://codepen.io/shshaw/pen/WXMdwE */
   $duration: 0.4s;
   $stroke: #42d7e4;
   $colorText: #234144;
@@ -138,21 +137,18 @@ html {
     
     transform-origin: 13.5px 12.5px;
     transform: scale(0.4) rotate(0deg);
-    animation: none $duration linear; //cubic-bezier(.08,.56,.04,.98);
+    animation: none $duration linear; 
     
     @keyframes explode {
-      //0% { stroke-width: 0; transform: scale(0.5) rotate(0deg); }
       30% { 
         stroke-width: 3;
         stroke-opacity: 1;
         transform: scale(0.8) rotate(40deg);
-        //animation-timing-function: cubic-bezier(.89,.01,.95,.51);
       }
       100% { 
         stroke-width: 0;
         stroke-opacity: 0;
         transform: scale(1.1) rotate(60deg);
-        //animation-timing-function: cubic-bezier(.08,.56,.04,.98);
       }
     }
   }
