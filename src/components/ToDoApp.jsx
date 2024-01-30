@@ -1,16 +1,10 @@
-// Importa las bibliotecas necesarias
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-// Componente principal de la aplicación
 function TodoApp() {
-  // Estado para manejar la lista de tareas
   const [tareas, setTareas] = useState([]);
+  const [nuevaTarea, setNuevaTarea] = useState(""); 
 
-  // Estado para manejar la nueva tarea
-  const [nuevaTarea, setNuevaTarea] = useState("");
-
-  // Función para agregar una nueva tarea
   const agregarTarea = () => {
     if (nuevaTarea.trim() !== "") {
       const nuevasTareas = [
@@ -19,33 +13,24 @@ function TodoApp() {
       ];
       setTareas(nuevasTareas);
       setNuevaTarea("");
-
-      // Guarda las tareas en el local storage
       localStorage.setItem("tareas", JSON.stringify(nuevasTareas));
     }
   };
 
-  // Función para marcar una tarea como hecha
   const marcarComoHecha = (id) => {
     const nuevasTareas = tareas.map((tarea) =>
       tarea.id === id ? { ...tarea, completada: !tarea.completada } : tarea
     );
     setTareas(nuevasTareas);
-
-    // Guarda las tareas en el local storage
     localStorage.setItem("tareas", JSON.stringify(nuevasTareas));
   };
 
-  // Función para eliminar todas las tareas completadas
   const eliminarTareasCompletadas = () => {
     const nuevasTareas = tareas.filter((tarea) => !tarea.completada);
     setTareas(nuevasTareas);
-
-    // Guarda las tareas en el local storage
     localStorage.setItem("tareas", JSON.stringify(nuevasTareas));
   };
 
-  // Efecto para cargar las tareas desde el local storage al cargar la página
   useEffect(() => {
     const tareasGuardadas = JSON.parse(localStorage.getItem("tareas")) || [];
     setTareas(tareasGuardadas);
@@ -74,13 +59,20 @@ function TodoApp() {
           {tareas.map((tarea) => (
             <li
               key={tarea.id}
-              className={`list-group-item ${
-                tarea.completada ? "list-group-item-success" : ""
-              }`}
+              className="list-group-item d-flex align-items-center"
             >
+              <input
+                type="checkbox"
+                checked={tarea.completada}
+                onChange={() => marcarComoHecha(tarea.id)}
+                className="mr-2"
+              />
               <span
                 onClick={() => marcarComoHecha(tarea.id)}
-                style={{ cursor: "pointer" }}
+                style={{
+                  cursor: "pointer",
+                  textDecoration: tarea.completada ? "line-through" : "none",
+                }}
               >
                 {tarea.texto}
               </span>
