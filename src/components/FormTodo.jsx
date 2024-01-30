@@ -16,7 +16,7 @@ const FormTodo = (props) => {
   return (
     <form onSubmit={handleSubmit}>
       {}
-      <div className="todo-list">
+      <div className="todo-list text-bg-light">
         <div className="file-input">
           {}
           <input
@@ -28,7 +28,7 @@ const FormTodo = (props) => {
           />
           {}
           <button
-            className="button pink"
+            className="button pink mb-3"
             disabled={description ? "" : "disabled"}
           >
             Agregar tarea
