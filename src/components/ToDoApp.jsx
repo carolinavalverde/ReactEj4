@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "../Styles/App.css";
 
 function TodoApp() {
   const [tareas, setTareas] = useState([]);
-  const [nuevaTarea, setNuevaTarea] = useState(""); 
+  const [nuevaTarea, setNuevaTarea] = useState("");
 
   const agregarTarea = () => {
     if (nuevaTarea.trim() !== "") {
@@ -37,23 +38,27 @@ function TodoApp() {
   }, []);
 
   return (
-    <div className="container mt-5">
-      <h1 className="text-center">Lista de Tareas</h1>
+    <div className="container m-2 p-3">
+      <h1 className="text-center text-bg-dark bg-warning fw-bold rounded p-2">
+        To Do List
+      </h1>
       <div className="mb-3">
         <input
           type="text"
           className="form-control"
-          placeholder="Nueva tarea"
+          placeholder="Agregue su tarea aquí"
           value={nuevaTarea}
           onChange={(e) => setNuevaTarea(e.target.value)}
         />
       </div>
-      <button className="btn btn-primary mb-3" onClick={agregarTarea}>
-        Agregar Tarea
-      </button>
+      <div className="d-flex justify-content-center">
+        <button className="btn btn-warning mb-3" onClick={agregarTarea}>
+          Agregar
+        </button>
+      </div>
 
       {tareas.length === 0 ? (
-        <p>No hay tareas por ahora.</p>
+        <p className="text-center text-warning">No hay tareas por ahora.</p>
       ) : (
         <ul className="list-group">
           {tareas.map((tarea) => (
@@ -65,7 +70,7 @@ function TodoApp() {
                 type="checkbox"
                 checked={tarea.completada}
                 onChange={() => marcarComoHecha(tarea.id)}
-                className="mr-2"
+                className="me-2 border-2 border-warning-subtle"
               />
               <span
                 onClick={() => marcarComoHecha(tarea.id)}
@@ -82,12 +87,14 @@ function TodoApp() {
       )}
 
       {tareas.some((tarea) => tarea.completada) && (
-        <button
-          className="btn btn-danger mt-3"
-          onClick={eliminarTareasCompletadas}
-        >
-          Eliminar Tareas Completadas
-        </button>
+        <div className="d-flex justify-content-center">
+          <button
+            className="btn btn-success mt-3"
+            onClick={eliminarTareasCompletadas}
+          >
+            Eliminar Tareas hechas
+          </button>
+        </div>
       )}
     </div>
   );

@@ -1,91 +1,13 @@
 html {
-  background: #eebe83;
   height: 100%;
   display: flex;
 }
-body {
+
+.body {
+  background: #e9c8a0;
   width: 100%;
   margin: auto;
 }
 
-.App {
-  font-family: sans-serif;
-  text-align: center;
-}
 
-.todo-list {
-  background: #e2cfdd;
-  font-size: 15px;
-  max-width: 300px;
-  margin: auto;
-  margin-bottom: 20px;
-  padding: 8px 16px;
-  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
-}
 
-/** BUTTONS*/
-.pink {
-  background-color: #c23455;
-}
-.colorpinkhover {
-  background-color: #9e4ba0;
-}
-
-.colorblue {
-  background-color: #9adddd;
-}
-.colorbluehover {
-  background-color: #166b72;
-}
-
-.button {
-  outline: none;
-  padding: 8px;
-  font-size: 15px;
-  border: 0px solid;
-  border-radius: 5px;
-  color: white;
-}
-
-/** TODO*/
-.file-input {
-  padding: 2px;
-  background: #f3caf3;
-}
-
-.file-input > .text {
-  outline: none;
-  padding: 0px 10px;
-  font-size: 15px;
-  width: 230px;
-  height: 46px;
-  background: transparent;
-  border: 0px solid;
-}
-
-/** CHECKBOX*/
-
-.todo {
-  display: block;
-  position: relative;
-  padding: 1em 1em 1em 16%;
-  margin: 0 auto;
-  cursor: pointer;
-  border-bottom: solid 1px #151313;
-}
-
-.todo.new-item {
-  color: #151313;
-  opacity: 0;
-}
-
-.todo__state {
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-}
-
-.todo__text {
-  color: #151313;
-}
