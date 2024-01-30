@@ -22,6 +22,7 @@ const FormTodo = (props) => {
           <input
             type="text"
             className="text"
+            placeholder="Escriba su tarea aquí"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
